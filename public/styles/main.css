@@ -1,0 +1,191 @@
+/* =========================
+   GLOBAL RESET & VARIABLES
+   ========================= */
+:root {
+  --font-primary: "Inter", "Poppins", sans-serif;
+  --color-bg: #f4f6f9;
+  --color-text: #2d3436;
+  --color-muted: #7f8c8d;
+  --color-primary: #4ecca3;
+  --color-primary-dark: #3bbf95;
+  --color-accent: #007bff;
+  --color-danger: #e74c3c;
+  --color-danger-dark: #c0392b;
+  --radius: 10px;
+  --transition: 0.3s ease;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  animation: fadeIn 0.8s ease;
+}
+
+/* =========================
+   CONTAINER & CARD
+   ========================= */
+.container {
+  max-width: 1000px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px 60px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition), transform var(--transition);
+  animation: slideUp 0.6s ease;
+}
+
+.container:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #222;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+p {
+  margin-bottom: 18px;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+small {
+  color: var(--color-muted);
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   FORM ELEMENTS
+   ========================= */
+input, textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dfe6e9;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background: #fdfdfd;
+  transition: border var(--transition), box-shadow var(--transition);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(78, 204, 163, 0.2);
+  outline: none;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+a, button {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.2s ease, background var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+button.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+a:hover, button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Action-specific buttons */
+a.edit {
+  background: var(--color-accent);
+}
+a.edit:hover {
+  background: #0056b3;
+}
+
+a.delete {
+  background: var(--color-danger);
+}
+a.delete:hover {
+  background: var(--color-danger-dark);
+}
+
+#newPostBtn {
+  margin: 20px 0;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  font-weight: 600;
+}
+#newPostBtn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================
+   BLOG LIST
+   ========================= */
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 24px 0;
+  border-bottom: 1px solid #eee;
+  transition: background var(--transition);
+  animation: fadeIn 0.8s ease;
+}
+
+li:hover {
+  background: #fafafa;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
